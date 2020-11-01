@@ -1,0 +1,124 @@
+.custom-header {
+  background: url(../../assets/images/bg.jpg) 0 0/100% 100% no-repeat;
+}
+
+#container {
+  background: radial-gradient(circle at 50% -150px, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.35) 100vw, transparent 100vw);
+  background-size:100vw auto, 100vw auto;
+  background-position:100% 0, 100% 0;
+  background-repeat:no-repeat;
+
+  .yellow-bg {
+    background: radial-gradient(circle at 50% -180px, transparent 85vw, rgba(252,202,6, 0.75) 85vw, #FCCA06 465px, transparent 465px);
+    background-size:100vw auto, 100vw auto;
+    background-position:100% 0, 100% 0;
+    background-repeat:no-repeat;
+  }
+
+  .user-details {
+    .avatar-row {
+      padding-bottom: 8px;
+    }
+  
+    ion-avatar, ion-label {
+      margin: auto;
+    }
+
+    ion-avatar { 
+      border: white 1px solid;
+      width: 50px;  
+      height: 50px;  
+    }
+  
+    .greeting-label {
+      color: white;
+      font-size: larger;
+      font-family: 'Allura Regular';
+      letter-spacing: 3px;
+    }
+
+    .name {
+      color: white;
+      font-size: x-large;
+    }
+  }
+
+  ion-menu-button {
+    display: block;
+    --color: white;
+  }
+
+  ion-button {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    --border-color:  transparent;
+    --box-shadow: none;
+  }
+}
+
+.policy-action-row {
+  ion-icon, ion-label {
+    margin: auto;
+  }
+
+  ion-icon {
+    margin-bottom: 4px;
+  }
+
+  ion-label {
+    font-size: smaller;
+    text-align: center;
+  }
+
+  .policy-action-item {
+    padding: 8px;
+  }
+}
+
+.coverage-link {
+  font-size: x-large;
+
+  ion-icon {
+    vertical-align: middle;
+  }
+}
+
+.policy-type {
+  align-items: center;
+  text-align: center;
+
+  ion-label {
+    display: block;
+  }
+
+  .details {
+    font-size: smaller;
+  }
+}
+
+.policy-notes {
+  font-size: x-small;
+  color: gray;
+}
+
+.assets-data {
+  .label {
+    font-size: x-large;
+  }
+
+  .assets-value {
+    ion-label {
+      display: inline;
+    }
+
+    .supplementary-label {
+      font-size: smaller;
+    }
+
+    .value {
+      font-size: small;
+      font-weight: bolder;
+    }
+  }
+
+}

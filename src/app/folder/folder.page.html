@@ -1,0 +1,129 @@
+<ion-content fullscreen>
+  <div class="custom-header">
+    <div id="container">
+      <div class="yellow-bg">
+        <ion-grid>
+          <ion-row>
+            <ion-col class="ion-align-items-start">
+              <ion-menu-button></ion-menu-button>
+            </ion-col>
+            <ion-col size="8">
+              <div class="user-details ion-margin-top">
+                <ion-row class="avatar-row">
+                  <ion-avatar>
+                    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                  </ion-avatar>
+                </ion-row>
+                <ion-row>
+                  <ion-label class="greeting-label">Good Afternoon</ion-label>
+                </ion-row>
+                <ion-row>
+                  <ion-label class="name">Chu Ying, Rebecca</ion-label>
+                </ion-row>
+              </div>
+            </ion-col>
+            <ion-col>
+              <ion-button onClick={}>
+                <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid class="policy-action-row">
+          <ion-row class="ion-align-items-baseline ion-margin-top">
+            <ion-col class="policy-action-item">
+              <ion-row>
+                <ion-icon name="document-outline" size="large"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-label>Manage ILAS Funds</ion-label>
+              </ion-row>
+            </ion-col>
+            <ion-col class="policy-action-item">
+              <ion-row>
+                <ion-icon name="document-outline" size="large"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-label>Claims</ion-label>
+              </ion-row>
+            </ion-col>
+            <ion-col class="policy-action-item">
+              <ion-row>
+                <ion-icon name="document-outline" size="large"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-label>Policy Servicing</ion-label>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="ion-text-center ion-margin-vertical coverage-link">
+          <ion-label>Coverage from 4 Policies <ion-icon name="chevron-forward-outline"></ion-icon></ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="policy-type">
+          <ion-icon name="heart-half-outline" size="large"></ion-icon>
+          <ion-label >Life</ion-label>
+          <ion-label class="details">HKD 6,146,066</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="policy-type">
+          <ion-icon name="heart-half-outline" size="large"></ion-icon>
+          <ion-label>Critical Illness</ion-label>
+          <ion-label class="details">up to HKD 1,000,000*</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="policy-type">
+          <ion-icon name="heart-half-outline" size="large"></ion-icon>
+          <ion-label>Medical & Hosp.</ion-label>
+          <ion-label class="details">up to: HKD 721,800/year,</ion-label>
+          <ion-label class="details">HKD 600,000/disability</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="policy-type">
+          <ion-icon name="heart-half-outline" size="large"></ion-icon>
+          <ion-label>Accident</ion-label>
+          <ion-label class="details">up to HKD 1,000,000*</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="ion-text-center policy-notes ion-margin-vertical">
+    <ion-label>*Additional coverages detailed in provision</ion-label>
+  </div>
+
+  <ion-item class="assets-data">
+    <ion-label class="label">Assets</ion-label>
+    <div slot="end" class="assets-value">
+      <ion-label class="ion-text-right ion-margin-end supplementary-label">Total</ion-label>
+      <ion-label class="ion-text-right value">HKD 255,309</ion-label>
+    </div>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label>Investement-Linked</ion-label>
+    <ion-label class="ion-text-right" slot="end">HKD 10,539</ion-label>
+    <ion-icon name="chevron-forward-outline" size="large" slot="end"></ion-icon>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label>Savings</ion-label>
+    <ion-label class="ion-text-right" slot="end">HKD 161,688</ion-label>
+    <ion-icon name="chevron-forward-outline" size="large" slot="end"></ion-icon>
+  </ion-item>
+</ion-content>
