@@ -70,7 +70,7 @@
 
 .notif-bell {
   div {
-    -webkit-flex: 1; /* Safari 6.1+ */
+    -webkit-flex: 1;
     flex: 1;
     position: absolute;
     top: 20%;
@@ -86,7 +86,7 @@
     ion-label {
       width: 100%;
       font-size: 8px;
-      -webkit-flex: 1; /* Safari 6.1+ */
+      -webkit-flex: 1;
       flex: 1;
     }
   }

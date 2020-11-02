@@ -1,9 +1,77 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>allPolicies</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="back()"> 
+      <ion-icon name="chevron-back-outline" size="large"></ion-icon> <ion-label>Back</ion-label>
+    </ion-buttons>
+    <ion-title class="ion-text-center" style="margin-left: -52px;"> 
+      <ion-label class="title">{{ title }}</ion-label> 
+    </ion-title> 
+  </ion-toolbar>
 
+  <div class="ion-padding-vertical">
+    <ion-card *ngFor="let policy of policies" class="policy-card">
+      <div style="padding: 0px 6px 8px 6px" [class.policy-due]="policy.isDue">
+        <ion-row class="ion-align-items-center">
+          <ion-col>
+            <ion-label class="policy-name">{{ policy.name }}</ion-label>
+            <ion-label class="policy-num">Policy No: {{ policy.number }}</ion-label>
+            <ion-label class="policy-status">Status: {{ policy.status }}</ion-label>
+          </ion-col>
+          <ion-col size=1>
+            <ion-icon name="chevron-forward-outline" size="large"></ion-icon>
+          </ion-col>
+        </ion-row>
+
+        <div class="policy-details">
+          <ion-row *ngIf="policy.sum">
+            <ion-col><ion-label>Sum Assured</ion-label></ion-col>
+            <ion-col><ion-label class="ion-text-right">HKD {{ policy.sum | number:'1.0-2' }}</ion-label></ion-col>
+          </ion-row>
+    
+          <ion-row *ngIf="policy.contribAmt">
+            <ion-col><ion-label>Contribution Amount</ion-label></ion-col>
+            <ion-col><ion-label class="ion-text-right">HKD {{ policy.contribAmt | number:'1.0-2' }}</ion-label></ion-col>
+          </ion-row>
+    
+          <ion-row *ngIf="policy.fundBal">
+            <ion-col><ion-label>Fund Balance*</ion-label></ion-col>
+            <ion-col><ion-label class="ion-text-right">HKD {{ policy.fundBal | number:'1.0-2' }}</ion-label></ion-col>
+          </ion-row>
+    
+          <ion-row *ngIf="policy.amtBenefit">
+            <ion-col><ion-label>Amount of Benefit</ion-label></ion-col>
+            <ion-col><ion-label class="ion-text-right">HKD {{ policy.amtBenefit | number:'1.0-2' }}</ion-label></ion-col>
+          </ion-row>
+    
+          <ion-row *ngIf="policy.cashValue">
+            <ion-col><ion-label>Cash Value*</ion-label></ion-col>
+            <ion-col><ion-label class="ion-text-right">HKD {{ policy.cashValue | number:'1.0-2' }}</ion-label></ion-col>
+          </ion-row>
+    
+          <ion-row *ngIf="policy.surrenderValue">
+            <ion-col><ion-label>Surrendered Value<span *ngIf="!policy.fundBal || !policy.cashValue">*</span></ion-label></ion-col>
+            <ion-col><ion-label class="ion-text-right">HKD {{ policy.surrenderValue | number:'1.0-2' }}</ion-label></ion-col>
+          </ion-row>
+    
+          <ion-row *ngIf="policy.premium" class="ion-align-items-baseline">
+            <ion-col><ion-label>Modal Premium / Regular Contribution including Levy</ion-label></ion-col>
+            <ion-col><ion-label class="ion-text-right">HKD {{ policy.premium | number:'1.2-2' }}</ion-label></ion-col>
+          </ion-row>
+        </div>
+      </div>
+
+      <div class="due-details" *ngIf="policy.isDue">
+        <ion-row class="ion-align-items-center">
+          <ion-col size=1 class="ion-text-center icon"><ion-icon name="alert-outline" size="large"></ion-icon></ion-col>
+          <ion-col>
+            <ion-label class="due-statement">Premium of HKD {{ policy.duePremium | number:'1.2-2' }} due in {{ calculateDaysBetween(policy.dueDate) }}</ion-label>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-card>
+
+    <div class="footer-note">
+      <ion-label class="ion-text-center">*excluding pending fund transactions</ion-label>
+    </div>
+  </div>
 </ion-content>
