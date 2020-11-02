@@ -34,22 +34,10 @@
 
       <ion-grid class="policy-action-row ion-padding-bottom ion-padding-horizontal">
         <ion-row class="ion-align-items-center">
-          <ion-col class="policy-action-item">
-            <div>
-              <img src="../../assets/icon/icon_fund.png">
-              <ion-label>Manage ILAS Funds</ion-label>
-            </div>
-          </ion-col>
-          <ion-col class="policy-action-item">
-            <div>
-              <img src="../../assets/icon/icon_claims.png">
-              <ion-label>Claims</ion-label>
-            </div>
-          </ion-col>
-          <ion-col class="policy-action-item">
-            <div>
-              <img src="../../assets/icon/icon_serving.png">
-              <ion-label>Policy <br/> Servicing</ion-label>
+          <ion-col *ngFor="let nav of navs" class="policy-action-item">
+            <div (click)="navigate(nav.id)">
+              <img [class.selected]="activeView == nav.id" src="../../assets/icon/{{ nav.icon }}">
+              <ion-label [class.selected]="activeView == nav.id">{{ nav.label }}</ion-label>
             </div>
           </ion-col>
         </ion-row>
@@ -57,74 +45,97 @@
     </div>
   </div>
 
-  <div class="ion-padding-vertical coverages-container">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <div class="ion-text-center coverage-link" 
-            routerLink="/all-policies"
-            routerDirection="forward">
-            <ion-label>Coverage from 4 Policies <ion-icon name="chevron-forward-outline"></ion-icon></ion-label>
-          </div>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-margin-top">
-        <ion-col>
-          <div class="policy-type">
-            <img src="../../assets/images/icon_life.png">
-            <ion-label class="title">Life</ion-label>
-            <ion-label class="details">HKD 6,146,066</ion-label>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="policy-type">
-            <img src="../../assets/images/icon_crit.png">
-            <ion-label class="title">Critical Illness</ion-label>
-            <ion-label class="details">up to HKD 1,000,000*</ion-label>
-          </div>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <div class="policy-type">
-            <img src="../../assets/images/icon_med.png">
-            <ion-label class="title">Medical & Hosp.</ion-label>
-            <ion-label class="details">up to: HKD 721,800/year,</ion-label>
-            <ion-label class="details">HKD 600,000/disability</ion-label>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="policy-type">
-            <img src="../../assets/images/icon_accident.png">
-            <ion-label class="title">Accident</ion-label>
-            <ion-label class="details">up to HKD 1,000,000*</ion-label>
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <div id="default" *ngIf="activeView == 0">
+    <div class="ion-padding-vertical coverages-container">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="ion-text-center coverage-link" 
+              routerLink="/all-policies"
+              routerDirection="forward">
+              <ion-label>Coverage from 4 Policies <ion-icon name="chevron-forward-outline"></ion-icon></ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-col>
+            <div class="policy-type">
+              <img src="../../assets/images/icon_life.png">
+              <ion-label class="title">Life</ion-label>
+              <ion-label class="details">HKD 6,146,066</ion-label>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="policy-type">
+              <img src="../../assets/images/icon_crit.png">
+              <ion-label class="title">Critical Illness</ion-label>
+              <ion-label class="details">up to HKD 1,000,000*</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="policy-type">
+              <img src="../../assets/images/icon_med.png">
+              <ion-label class="title">Medical & Hosp.</ion-label>
+              <ion-label class="details">up to: HKD 721,800/year,</ion-label>
+              <ion-label class="details">HKD 600,000/disability</ion-label>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="policy-type">
+              <img src="../../assets/images/icon_accident.png">
+              <ion-label class="title">Accident</ion-label>
+              <ion-label class="details">up to HKD 1,000,000*</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    
+      <div class="ion-text-center policy-notes ion-margin-vertical">
+        <ion-label>*Additional coverages detailed in provision</ion-label>
+      </div>
+    </div>
   
-    <div class="ion-text-center policy-notes ion-margin-vertical">
-      <ion-label>*Additional coverages detailed in provision</ion-label>
+    <div class="assets-container">
+      <ion-item class="assets-data">
+        <ion-label class="label">Assets</ion-label>
+        <div slot="end" class="assets-value">
+          <ion-label class="ion-text-right ion-margin-end supplementary-label">Total</ion-label>
+          <ion-label class="ion-text-right value">HKD 255,309</ion-label>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="breakdown">
+        <ion-label class="label">Investement-Linked</ion-label>
+        <ion-label class="ion-text-right value" slot="end">HKD 10,539</ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+      </ion-item>
+      <ion-item lines="none" class="breakdown">
+        <ion-label class="label">Savings</ion-label>
+        <ion-label class="ion-text-right value" slot="end">HKD 161,688</ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+      </ion-item>
     </div>
   </div>
 
-  <div class="assets-container">
-    <ion-item class="assets-data">
-      <ion-label class="label">Assets</ion-label>
-      <div slot="end" class="assets-value">
-        <ion-label class="ion-text-right ion-margin-end supplementary-label">Total</ion-label>
-        <ion-label class="ion-text-right value">HKD 255,309</ion-label>
-      </div>
-    </ion-item>
-    <ion-item lines="none" class="breakdown">
-      <ion-label class="label">Investement-Linked</ion-label>
-      <ion-label class="ion-text-right value" slot="end">HKD 10,539</ion-label>
-      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
-    </ion-item>
-    <ion-item lines="none" class="breakdown">
-      <ion-label class="label">Savings</ion-label>
-      <ion-label class="ion-text-right value" slot="end">HKD 161,688</ion-label>
-      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
-    </ion-item>
+  <div id="policy-servicing" *ngIf="activeView == 3">
+    <ion-grid>
+      <ion-row *ngFor="let service of services" class="service">
+        <ion-col size="auto">
+          <ion-icon name="{{ service.icon }}" size="large"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-label class="service-label">{{ service.label }}</ion-label>
+          <ion-item *ngFor="let action of service.actions" lines="none" class="service-action ion-no-padding">
+            <ion-label>{{ action.desc }}</ion-label>
+            <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="ion-text-center ion-margin">
+      <ion-icon slot="end" name="chevron-up-outline" (click)="back()"></ion-icon>
+    </div>
   </div>
 </ion-content>
