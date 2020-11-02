@@ -1,19 +1,29 @@
+.ion-content {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
 .custom-header {
   background: url(../../assets/images/bg.jpg) 0 0/100% 100% no-repeat;
+  border-bottom-left-radius:40% 20%;
+  border-bottom-right-radius:40% 20%;
 }
 
 #container {
-  background: radial-gradient(circle at 50% -150px, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.35) 100vw, transparent 100vw);
-  background-size:100vw auto, 100vw auto;
-  background-position:100% 0, 100% 0;
-  background-repeat:no-repeat;
+  // background: radial-gradient(circle at 50% -150px, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.35) 100vw, transparent 100vw);
+  // background-size:100vw auto, 100vw auto;
+  // background-position:100% 0, 100% 0;
+  // background-repeat:no-repeat;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-bottom-left-radius:40% 17%;
+  border-bottom-right-radius:40% 17%;
 
-  .yellow-bg {
-    background: radial-gradient(circle at 50% -180px, transparent 85vw, rgba(252,202,6, 0.75) 85vw, #FCCA06 465px, transparent 465px);
-    background-size:100vw auto, 100vw auto;
-    background-position:100% 0, 100% 0;
-    background-repeat:no-repeat;
-  }
+  // .black-overlay {
+  //   background-color: rgba(0, 0, 0, 0.6);
+  //   border-bottom-left-radius:50% 15%;
+  //   border-bottom-right-radius:50% 15%;
+  // }
 
   .user-details {
     .avatar-row {
@@ -25,21 +35,23 @@
     }
 
     ion-avatar { 
-      border: white 1px solid;
+      border: white 2px solid;
       width: 50px;  
       height: 50px;  
     }
   
     .greeting-label {
       color: white;
-      font-size: larger;
+      font-size: x-large;
       font-family: 'Allura Regular';
-      letter-spacing: 3px;
+      letter-spacing: -0.5px;
     }
 
     .name {
       color: white;
       font-size: x-large;
+      font-family: "Lexend Deca Regular";
+      font-weight: bold;
     }
   }
 
@@ -56,13 +68,47 @@
   }
 }
 
+.notif-bell {
+  div {
+    -webkit-flex: 1; /* Safari 6.1+ */
+    flex: 1;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #B81F41;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ion-label {
+      width: 100%;
+      font-size: 8px;
+      -webkit-flex: 1; /* Safari 6.1+ */
+      flex: 1;
+    }
+  }
+}
+
 .policy-action-row {
-  ion-icon, ion-label {
+  background-color: rgba(252, 203, 6, 0.9);
+  border-bottom-left-radius:40% 40%;
+  border-bottom-right-radius:40% 40%;
+  box-shadow: 15px 2px 2px #FFEB9B;
+
+  img, ion-label {
     margin: auto;
+    --color: #114341;
+    color: #114341;
+    display: block;
   }
 
-  ion-icon {
+  img {
     margin-bottom: 4px;
+    width: 30px;
+    height: 30px;
   }
 
   ion-label {
@@ -70,13 +116,47 @@
     text-align: center;
   }
 
-  .policy-action-item {
-    padding: 8px;
+  div {
+    vertical-align: text-bottom;
   }
+
+  .policy-action-item {
+
+    padding: 12px;
+  }
+}
+
+.coverages-container {
+  position: relative;
+  overflow: hidden;
+
+  ion-grid, .policy-notes {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.coverages-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.05;
+  background-image: url(../../assets/images/bg2.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
 }
 
 .coverage-link {
   font-size: x-large;
+  font-family: "Cutive Mono Regular";
+  font-weight: 600;
+  letter-spacing: -3px;
 
   ion-icon {
     vertical-align: middle;
@@ -86,6 +166,16 @@
 .policy-type {
   align-items: center;
   text-align: center;
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .title {
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
 
   ion-label {
     display: block;
@@ -101,18 +191,40 @@
   color: gray;
 }
 
-.assets-data {
-  .label {
-    font-size: x-large;
+.assets-container {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  box-shadow: 0px -1px 12px #e3e3e3;
+  flex: 1 1 auto;
+  padding: 12px;
+
+  .assets-data {
+    .label {
+      font-size: x-large;
+      font-weight: 600;
+      font-family: "Cutive Mono Regular";
+      letter-spacing: -2px;
+    }
+  
+    .assets-value {
+      ion-label {
+        display: inline;
+      }
+  
+      .supplementary-label {
+        font-size: smaller;
+      }
+  
+      .value {
+        font-size: small;
+        font-weight: bolder;
+      }
+    }
   }
 
-  .assets-value {
-    ion-label {
-      display: inline;
-    }
-
-    .supplementary-label {
-      font-size: smaller;
+  .breakdown {
+    .label {
+      font-size: small;
     }
 
     .value {
@@ -120,5 +232,4 @@
       font-weight: bolder;
     }
   }
-
 }
