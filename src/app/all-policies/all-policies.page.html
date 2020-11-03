@@ -8,8 +8,8 @@
     </ion-title> 
   </ion-toolbar>
 
-  <div class="ion-padding-vertical">
-    <ion-card *ngFor="let policy of policies" class="policy-card">
+  <div>
+    <ion-card *ngFor="let policy of policies" class="policy-card ion-margin-vertical">
       <div style="padding: 0px 6px 8px 6px" [class.policy-due]="policy.isDue">
         <ion-row class="ion-align-items-center">
           <ion-col>

@@ -33,10 +33,10 @@
       </ion-grid>
 
       <ion-grid class="policy-action-row ion-padding-bottom ion-padding-horizontal">
-        <ion-row class="ion-align-items-center">
-          <ion-col *ngFor="let nav of navs" class="policy-action-item">
+        <ion-row class="ion-align-items-center ion-padding-horizontal">
+          <ion-col *ngFor="let nav of navs" class="policy-action-item ion-padding-horizontal">
             <div (click)="navigate(nav.id)">
-              <img [class.selected]="activeView == nav.id" src="../../assets/icon/{{ nav.icon }}">
+              <img src="../../assets/icon/{{ nav.icon }}">
               <ion-label [class.selected]="activeView == nav.id">{{ nav.label }}</ion-label>
             </div>
           </ion-col>
@@ -92,7 +92,7 @@
         </ion-row>
       </ion-grid>
     
-      <div class="ion-text-center policy-notes ion-margin-vertical">
+      <div class="ion-text-center policy-notes ion-margin-top">
         <ion-label>*Additional coverages detailed in provision</ion-label>
       </div>
     </div>
@@ -122,14 +122,16 @@
     <ion-grid>
       <ion-row *ngFor="let service of services" class="service">
         <ion-col size="auto">
-          <ion-icon name="{{ service.icon }}" size="large"></ion-icon>
+          <ion-icon name="{{ service.icon }}"></ion-icon>
         </ion-col>
         <ion-col>
-          <ion-label class="service-label">{{ service.label }}</ion-label>
-          <ion-item *ngFor="let action of service.actions" lines="none" class="service-action ion-no-padding">
-            <ion-label>{{ action.desc }}</ion-label>
-            <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
-          </ion-item>
+          <div class="ion-margin-left">
+            <ion-label class="service-label">{{ service.label }}</ion-label>
+            <ion-item *ngFor="let action of service.actions" lines="none" class="service-action ion-no-padding">
+              <ion-label>{{ action.desc }}</ion-label>
+              <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+            </ion-item>
+          </div>
         </ion-col>
       </ion-row>
     </ion-grid>

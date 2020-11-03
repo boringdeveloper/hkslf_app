@@ -6,6 +6,7 @@
 
 .custom-header {
   background: url(../../assets/images/bg.jpg) 0 0/100% 100% no-repeat;
+  background-size: cover;
   border-bottom-left-radius:40% 20%;
   border-bottom-right-radius:40% 20%;
 }
@@ -32,14 +33,14 @@
   
     .greeting-label {
       color: white;
-      font-size: x-large;
+      font-size: larger;
       font-family: 'Allura Regular';
       letter-spacing: -0.5px;
     }
 
     .name {
       color: white;
-      font-size: x-large;
+      font-size: larger;
       font-family: "Lexend Deca Regular";
       font-weight: bold;
     }
@@ -116,7 +117,6 @@
   }
 
   .policy-action-item {
-
     padding: 12px;
   }
 }
@@ -238,6 +238,7 @@
 
     ion-icon {
       color: var(--slf-yellow);
+      font-size: 26px;
     }
 
     .service-label {
