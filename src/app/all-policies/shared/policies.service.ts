@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from "rxjs/operators";
 import { Observable } from 'rxjs';
-import { IPolicies } from 'src/interface/policy.interface';
+import { IPolicies } from './policy.interface';
 
 @Injectable({
   providedIn: 'root'

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PoliciesService } from '../services/policies/policies.service';
+import { PoliciesService } from './shared/policies.service';
 import { Observable } from 'rxjs';
-import { IPolicies } from 'src/interface/policy.interface';
+import { IPolicies } from './shared/policy.interface';
 
 @Component({
   selector: 'app-all-policies',
