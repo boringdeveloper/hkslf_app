@@ -35,7 +35,7 @@ export class AllPoliciesPage implements OnInit {
   }
 
   public back() {
-    this.router.navigate(['folder']);
+    this.router.navigate(['dashboard']);
   }
 
 }
