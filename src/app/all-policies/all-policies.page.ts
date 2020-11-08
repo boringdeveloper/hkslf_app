@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PoliciesService } from '../services/policies/policies.service';
 import { Observable } from 'rxjs';
+import { IPolicies } from 'src/interface/policy.interface';
 
 @Component({
   selector: 'app-all-policies',
@@ -11,7 +12,7 @@ import { Observable } from 'rxjs';
 export class AllPoliciesPage implements OnInit {
   title: String = "All Policies"
 
-  policies: Observable<any>;
+  policies: Observable<IPolicies>;
 
   constructor(
     private router: Router,
