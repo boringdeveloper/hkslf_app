@@ -1,0 +1,29 @@
+#policy-servicing {
+    padding: 8px;
+  
+    .service {
+      margin: 8px;
+      border-bottom: #d5d5d5 1px solid;
+  
+      ion-icon {
+        color: var(--slf-yellow);
+        font-size: 26px;
+      }
+  
+      .service-label {
+        font-size: small;
+        color: var(--slf-muted);
+      }
+  
+      .service-action {
+        ion-label {
+          font-weight: bold;
+          color: var(--slf-black);
+        }
+    
+        ion-icon {
+          color: var(--slf-black);
+        }
+      }
+    }
+  }

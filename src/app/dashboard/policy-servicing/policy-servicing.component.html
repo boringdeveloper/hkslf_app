@@ -1,0 +1,22 @@
+<div id="policy-servicing">
+  <ion-grid>
+    <ion-row *ngFor="let service of services" class="service">
+      <ion-col size="auto">
+        <ion-icon name="{{ service.icon }}"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <div class="ion-margin-left">
+          <ion-label class="service-label">{{ service.label }}</ion-label>
+          <ion-item *ngFor="let action of service.actions" lines="none" class="service-action ion-no-padding">
+            <ion-label>{{ action.desc }}</ion-label>
+            <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+          </ion-item>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="ion-text-center ion-margin">
+    <ion-icon slot="end" name="chevron-up-outline" (click)="returnToDshboardMain()"></ion-icon>
+  </div>
+</div>

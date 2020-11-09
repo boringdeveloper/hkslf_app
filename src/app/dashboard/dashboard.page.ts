@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,60 +25,24 @@ export class DashboardPage implements OnInit {
     }
   ];
 
-  services: any = [
-    {
-      'icon': 'documents-outline',
-      'label': 'Move value from one policy to another',
-      'actions': [
-        {
-          'desc': 'Pay with Policy Value'
-        },
-        {
-          'desc': 'Standing Instructions'
-        }
-      ]
-    },
-    {
-      'icon': 'wallet-outline',
-      'label': 'Cash out your policy values',
-      'actions': [
-        {
-          'desc': 'Value Withdrawal'
-        },
-        {
-          'desc': 'Payout Method'
-        }
-      ]
-    },
-    {
-      'icon': 'cash-outline',
-      'label': 'Take a loan against your policy value',
-      'actions': [
-        {
-          'desc': 'Loans'
-        }
-      ]
-    },
-    {
-      'icon': 'pricetags-outline',
-      'label': 'Payment options for your premiums',
-      'actions': [
-        {
-          'desc': 'Premium Payment Method'
-        }
-      ]
-    }
-  ]
-
   activeView = 0;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  toPoliciesPage() {
+    this.router.navigate(['/all-policies'])
+  }
+
   navigate(navId: any) {
-    this.activeView = navId;
+    if (this.activeView == navId) {
+      this.activeView = 0;
+    }
+    else {
+      this.activeView = navId;
+    }
   }
 
   back() {

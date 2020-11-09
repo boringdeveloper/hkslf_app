@@ -1,0 +1,71 @@
+<div id="default">
+  <div class="ion-padding-vertical coverages-container">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="ion-text-center coverage-link" (click)="__toPoliciesPage()">
+            <ion-label>Coverage from 4 Policies <ion-icon name="chevron-forward-outline"></ion-icon>
+            </ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-top">
+        <ion-col>
+          <div class="policy-type">
+            <img src="../../assets/images/icon_life.png">
+            <ion-label class="title">Life</ion-label>
+            <ion-label class="details">HKD 6,146,066</ion-label>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="policy-type">
+            <img src="../../assets/images/icon_crit.png">
+            <ion-label class="title">Critical Illness</ion-label>
+            <ion-label class="details">up to HKD 1,000,000*</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="policy-type">
+            <img src="../../assets/images/icon_med.png">
+            <ion-label class="title">Medical & Hosp.</ion-label>
+            <ion-label class="details">up to: HKD 721,800/year,</ion-label>
+            <ion-label class="details">HKD 600,000/disability</ion-label>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="policy-type">
+            <img src="../../assets/images/icon_accident.png">
+            <ion-label class="title">Accident</ion-label>
+            <ion-label class="details">up to HKD 1,000,000*</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="ion-text-center policy-notes ion-margin-top">
+      <ion-label>*Additional coverages detailed in provision</ion-label>
+    </div>
+  </div>
+
+  <div class="assets-container">
+    <ion-item class="assets-data">
+      <ion-label class="label">Assets</ion-label>
+      <div slot="end" class="assets-value">
+        <ion-label class="ion-text-right ion-margin-end supplementary-label">Total</ion-label>
+        <ion-label class="ion-text-right value">HKD 255,309</ion-label>
+      </div>
+    </ion-item>
+    <ion-item lines="none" class="breakdown">
+      <ion-label class="label">Investement-Linked</ion-label>
+      <ion-label class="ion-text-right value" slot="end">HKD 10,539</ion-label>
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item lines="none" class="breakdown">
+      <ion-label class="label">Savings</ion-label>
+      <ion-label class="ion-text-right value" slot="end">HKD 161,688</ion-label>
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
+  </div>
+</div>
