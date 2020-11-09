@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content *ngIf="dashboardData | async as data">
   <div class="custom-header">
     <div id="container">
       <ion-grid class="black-overlay ion-padding-bottom">
@@ -10,14 +10,14 @@
             <div class="user-details ion-margin-top">
               <ion-row class="avatar-row">
                 <ion-avatar>
-                  <img src="../../assets/images/user.png">
+                  <img src="../../assets/images/{{ data.user.userImage }}">
                 </ion-avatar>
               </ion-row>
               <ion-row>
                 <ion-label class="greeting-label">Good Afternoon</ion-label>
               </ion-row>
               <ion-row>
-                <ion-label class="name">Chu Ying, Rebecca</ion-label>
+                <ion-label class="name">{{ data.user.lastName }}, {{ data.user.firstName }}</ion-label>
               </ion-row>
             </div>
           </ion-col>
@@ -45,6 +45,8 @@
     </div>
   </div>
 
-  <app-main-dashboard *ngIf="activeView == 0" (_toPoliciesPage)="toPoliciesPage()"></app-main-dashboard>
+  <app-main-dashboard [userAssets]="data.assets" [userCoverage]="data.coverage" *ngIf="activeView == 0"
+    (_toPoliciesPage)="toPoliciesPage()">
+  </app-main-dashboard>
   <app-policy-servicing *ngIf="activeView == 3" (back)="back()"></app-policy-servicing>
 </ion-content>

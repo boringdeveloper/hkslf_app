@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IAssets, ICoverage } from '../shared/dashboard.interface';
 
 @Component({
   selector: 'app-main-dashboard',
@@ -6,7 +7,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./main-dashboard.component.scss'],
 })
 export class MainDashboardComponent implements OnInit {
-
+  @Input() userAssets: IAssets;
+  @Input() userCoverage: ICoverage;
   @Output() _toPoliciesPage = new EventEmitter();
 
   constructor() { }

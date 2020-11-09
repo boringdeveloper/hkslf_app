@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DashboardService } from './shared/dashboard.service';
+import { IDashboard } from './shared/dashboard.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,11 +28,17 @@ export class DashboardPage implements OnInit {
     }
   ];
 
+  dashboardData: Observable<IDashboard>;
+
   activeView = 0;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private dashboardService: DashboardService
+  ) { }
 
   ngOnInit() {
+    this.dashboardData = this.dashboardService.getDashboardData();
   }
 
   toPoliciesPage() {
