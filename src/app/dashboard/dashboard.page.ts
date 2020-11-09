@@ -45,6 +45,10 @@ export class DashboardPage implements OnInit {
     this.router.navigate(['/all-policies'])
   }
 
+  notifCount(count: number) {
+    return (count > 9) ? "9+" : count;
+  }
+
   navigate(navId: any) {
     if (this.activeView == navId) {
       this.activeView = 0;

@@ -17,7 +17,8 @@
                 <ion-label class="greeting-label">Good Afternoon</ion-label>
               </ion-row>
               <ion-row>
-                <ion-label class="name">{{ data.user.lastName }}, {{ data.user.firstName }}</ion-label>
+                <ion-label class="name">{{ data.user.lastName }}, {{ data.user.firstName }} {{ data.user.middleName }}
+                </ion-label>
               </ion-row>
             </div>
           </ion-col>
@@ -25,7 +26,7 @@
             <ion-button class="notif-bell" onClick={}>
               <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
               <div>
-                <ion-label>2</ion-label>
+                <ion-label> {{ notifCount(data.notifCount) }} </ion-label>
               </div>
             </ion-button>
           </ion-col>
